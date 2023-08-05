@@ -1,4 +1,4 @@
-CREATE TABLE deli_products (
+CREATE TABLE IF NOT EXISTS deli_products (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     type ENUM('animal source', 'vegetable', 'drinks', 'cleaning products') NOT NULL,
@@ -6,12 +6,12 @@ CREATE TABLE deli_products (
     stock_quantity INT NOT NULL
 );
 
-CREATE TABLE cart (
+CREATE TABLE IF NOT EXISTS cart (
     product_id INT AUTO_INCREMENT PRIMARY KEY,
     quantity INT NOT NULL
 );
 
-INSERT INTO deli_products (name, type, price, stock_quantity) VALUES
+INSERT IGNORE INTO deli_products (name, type, price, stock_quantity) VALUES
     ('Cheddar Cheese', 'animal source', 5.99, 50),
     ('Lettuce', 'vegetable', 1.49, 100),
     ('Orange Juice', 'drinks', 2.99, 75),
