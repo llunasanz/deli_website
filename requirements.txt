@@ -1,0 +1,9 @@
+Flask==1.1.2
+Jinja2==2.11.3
+Werkzeug==2.0.3
+click==8.0.4
+itsdangerous==2.0.1
+pymysql==1.1.0
+markupsafe==2.0.1
+Flask-MySQL==1.5.2
+
